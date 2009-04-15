@@ -1,0 +1,5 @@
+
+<% form_for([:admin,:news,@news_place]) do |f| %>
+	<%= render :partial => "form", :locals => { :f => f } %>
+  <%= render :partial => 'shared/edit_resource_links' %>
+<% end %>

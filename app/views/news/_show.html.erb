@@ -1,0 +1,6 @@
+<% news=NewsItem.show_news(identifier) %>
+<% if news %>
+  <div class="news_<%= identifier %>">
+    <%= news.body %>
+  </div>
+<% end %>

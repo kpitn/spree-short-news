@@ -1,0 +1,11 @@
+fr-FR:
+  short_news: "Breves"
+  new_short_news: "Ajouter une breve"
+  new_news_places: "Ajouter un endroit"
+  place: "Endroit"
+  title: "Titre"
+  content: "Contenu"
+  published_start_at: "Publié de"
+  published_end_at: "Publié jusqu'a"
+  identifier: "Identifiant"
+  no_end: "Pas de fin"

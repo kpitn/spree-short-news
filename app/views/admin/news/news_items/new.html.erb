@@ -1,0 +1,7 @@
+
+<h1><%= "#{t("actions.new")} #{t("short_news")}" %></h1>
+
+<% form_for([:admin,:news,@news_item]) do |f| %>
+  <%= render :partial => 'form', :locals => {:f => f} %>
+  <%= render :partial => 'admin/shared/new_resource_links' %>
+<% end %>

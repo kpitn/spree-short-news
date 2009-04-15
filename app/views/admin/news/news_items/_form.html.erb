@@ -1,0 +1,14 @@
+  <%= f.label :identifier, t("place")%><br/>
+  <%= f.select :identifier, NewsPlace.find(:all).collect {|p| [ p.name, p.identifier ] } %><br/>
+  <%= f.label :title, t("title")%><br/>  <%= f.text_field :title %><br/>
+  <%= f.label :body, t("content")%><br/>  <%= f.text_area :body,:maxlength=>@news_item.news_place.maxlength %><br/>
+  <%= f.label :published_start_at, t("published_start_at")%><br/>
+  <%= calendar_date_select :news_item, :published_start_at, :style=>"width:150px" %><br/>
+  <%= f.label :published_end_at, t("published_end_at")%><br/>
+  <%= calendar_date_select :news_item, :published_end_at, :style=>"width:150px" %><br/>
+
+
+<% content_for :head do %>
+  <%= calendar_date_select_includes %>
+<% end %>
+  <%= load_textarea_maxlenght("#news_item_body") %>

@@ -1,0 +1,5 @@
+<div>
+<% @news_places.each do |place| %>
+  <%= link_to(place.name,"#{admin_news_news_items_url}?identifier=#{place.identifier}")  %> -
+<% end %>
+</div>

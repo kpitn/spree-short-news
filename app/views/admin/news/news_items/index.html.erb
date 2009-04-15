@@ -1,0 +1,36 @@
+ <p><%= button_link_to t("new_short_news"), new_object_url, :icon => 'add' %></p>
+
+<%= render :partial=> "admin/news/news_places/list" %>
+
+<% if @news_items.size>0 %>
+<table class="index">
+  <thead>
+    <tr>
+      <th><%= t('place') %></th>
+      <th><%= t('title') %></th>
+      <th><%= t('content') %></th>
+      <th><%= t('published_start_at') %></th>
+      <th><%= t('published_end_at') %></th>
+      <th><%= t('action') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @news_items.each do |news| %>
+    <tr>
+      <td><%= news.news_place.name  %></td>
+      <td><%= news.title  %></td>
+      <td><%= truncate(news.body,:lenght=>40) %></td>
+      <td><%= l(news.published_start_at) unless news.published_start_at.nil?  %></td>
+      <td><%= news.published_end_at.nil? ? t("no_end") : l(news.published_end_at) %></td>
+      <td>
+      <%= link_to_edit news  %>
+      &nbsp;
+      <%= link_to_delete news  %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<% else %>
+Aucune news actuellement
+<% end %>

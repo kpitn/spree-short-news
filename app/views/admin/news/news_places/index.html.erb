@@ -1,0 +1,30 @@
+ <p><%= button_link_to t("new_news_places"), new_object_url, :icon => 'add' %></p>
+
+<% if @news_places.size>0 %>
+<table class="index">
+  <thead>
+    <tr>
+      <th><%= t('identifier') %></th>
+      <th><%= t('name') %></th>
+      <th><%= t('maxlength') %></th>
+      <th><%= t('action') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @news_places.each do |news| %>
+    <tr>
+      <td><%= news.identifier %></td>
+      <td><%= news.name  %></td>
+      <td><%= news.maxlength  %></td>
+      <td>
+      <%= link_to_edit news  %>
+      &nbsp;
+      <%= link_to_delete news  %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<% else %>
+Aucune news place actuellement
+<% end %>
