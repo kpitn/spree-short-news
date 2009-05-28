@@ -1,6 +1,6 @@
  <p><%= button_link_to t("new_short_news"), new_object_url, :icon => 'add' %></p>
 
-<%= render :partial=> "admin/news/news_places/list" %>
+Filtré par : <%= render :partial=> "admin/news/news_places/list" %>
 
 <% if @news_items.size>0 %>
 <table class="index">

@@ -8,7 +8,7 @@ class ShortNewsExtension < Spree::Extension
       before_filter :add_short_news_links, :only => :index
 
       def add_short_news_links
-        #@extension_links << {:link => admin_news_path, :link_text => t('short_news'), :description => t('short_news_description')}
+        @extension_links << {:link => admin_news_news_items_path, :link_text => t('short_news'), :description => t('short_news_description')}
       end
     end
 
